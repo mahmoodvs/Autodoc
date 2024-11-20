@@ -1,0 +1,16 @@
+class TransactionIDGenerator:
+    def __init__(self):
+        self.transaction_count = 1  # Start from 0001
+    
+    def get_next_transaction_id(self):
+        # Format the number with leading zeros, assuming you want to pad it to 4 digits
+        transaction_id = f"{self.transaction_count:04d}"
+        self.transaction_count += 1
+        return transaction_id
+
+# Example usage
+transaction_generator = TransactionIDGenerator()
+
+# Simulate saving transactions and getting the next ID
+for _ in range(5):
+    print(transaction_generator.get_next_transaction_id())
